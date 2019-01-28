@@ -75,7 +75,7 @@ endif
 
 set history=1000                            " more history
 set undolevels=1000                         " more undo
-set shell=bash                              " set shell for ?
+set shell=zsh                              " set shell for ?
 set hidden                                  " allow buffers in background
 set listchars=tab:\ \ ,trail:·              " invisible chars
 set list                                    " show trails
@@ -93,21 +93,21 @@ set softtabstop=4
 set noexpandtab                             " tab chars don't expand to space
 set smartindent
 
-set autoread                                " refresh files when coming back
-set foldlevel=999
-set exrc                                    " autoload local .vimrc files
-set secure                                  " but let's make it secure
-set modelines=5
-set path+=**
-set wildmenu
+" set autoread                                " refresh files when coming back
+" set foldlevel=999
+" set exrc                                    " autoload local .vimrc files
+" set secure                                  " but let's make it secure
+" set modelines=5
+" set path+=**
+" set wildmenu
 
 filetype plugin on
 
-augroup autosave_buffer
-	autocmd!
-	autocmd BufWinLeave *.vim,*.conf mkview
-	autocmd BufWinEnter *.vim,*.conf silent loadview
-augroup END
+" augroup autosave_buffer
+" 	autocmd!
+" 	autocmd BufWinLeave *.vim,*.conf mkview
+" 	autocmd BufWinEnter *.vim,*.conf silent loadview
+" augroup END
 
 set viewoptions-=options
 set sessionoptions-=help
@@ -115,12 +115,6 @@ set sessionoptions-=help
 " }}}
 " {{{	Plugin specific
 
-" {{{ Plugin-specific: Pencil
-" colorscheme pencil
-" let g:pencil_terminal_italics = 1
-" let g:pencil_higher_contrast_ui = 0
-" let g:pencil_neutral_headings = 1
-" }}}
 " {{{ Plugin specific: Pandoc
 
 let g:pandoc#filetypes#pandoc_markdown = 1
@@ -151,12 +145,12 @@ endfunction
 " }}}
 " {{{ Plugin specific: UltiSnips
 
-let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsExpandTrigger="<Tab>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+" let g:NERDTreeDirArrowExpandable = '▸'
+" let g:NERDTreeDirArrowCollapsible = '▾'
 
 " }}}
 " {{{ Plugin-specific: ctrlp
@@ -174,34 +168,11 @@ let g:ctrlp_custom_ignore = {
 set wildignore+=*/.git/*,*/.pdf/*
 
 " }}}
-" {{{ Plugin-specific: Table-mode
-
-let g:table_mode_corner = "|"
-
-" }}}
-" {{{ Plugin-specific: vim-tmux-navigator
-
-" nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
-" nnoremap <silent> <M-j> :TmuxNavigateDown<cr>
-" nnoremap <silent> <M-k> :TmuxNavigateUp<cr>
-" nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
-" nnoremap <silent> <M-,> :TmuxNavigatePrevious<cr>
-
-nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
-
-let g:tmux_navigator_no_mappings = 0
-
-" }}}
-
-" }}}
 " {{{	Keybinds
 
 " Assign mapleader to space and local leader to ','
 let mapleader = "\<Space>"	
 let maplocalleader = ","
-
-nmap <leader>wn <Plug>VimwikiNextLink
-nmap <leader>wp <Plug>VimwikiPrevLink
 
 " Insert date
 map <leader>r :r! date "+\%d/\%m-\%Y"<CR>
@@ -211,10 +182,8 @@ map <leader>1 :CtrlP $NOTESDIR<CR>
 map <leader>2 :CtrlP $PRESENDIR<CR>
 map <leader>3 :CtrlP $DEVDIR<CR>
 map <leader>0 :e ~/.config/nvim/init.vim<CR>
-map <leader>9 :e ~/.config/i3/config<CR>
-map <leader>8 :e ~/.config/termite/config<CR>
-map <leader>7 :e ~/.config/polybar/config<CR>
-map <leader>6 :e ~/.zshrc<CR>
+map <leader>9 :e ~/.zshrc<CR>
+map <leader>8 :e ~/.tmux.conf<CR>
 
 " Add ctrl-tab support
 " noremap <S-tab> :tabnext<CR>
@@ -291,31 +260,8 @@ nnoremap Q <nop>
 " Forgot sudo? No problem
 com W :w !sudo tee %
 
-
-" }}}
-" {{{	Visuals
-
-
 set encoding=utf-8	" correct encoding
 scriptencoding utf8
 set termencoding=utf-8
 
 set linespace=0
-" set guifont=FuraMonoForPowerline\ Nerd\ Font:h7
-" set guifont=Sauce\ Code\ Powerline:h10
-" set guifont=Fira\ Mono\ for\ Powerline:h7
-set guifont=FuraCode\ Nerd\ Font\ 11
-" set guifont=Roboto\ Mono\ for\ Powerline:h10
-" set guifont=Monaco\ for\ Powerline:h10
-
-let g:gruvbox_contrast_dark = "soft"
-let g:gruvbox_termcolors = "256"
-set background=dark
-" set termguicolors
-
-" Enable true color for neovim
-let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
-
-" Enables cursor similar to gui programs
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
-" }}}
