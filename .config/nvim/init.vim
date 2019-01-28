@@ -20,6 +20,7 @@ filetype off                      " required
 call plug#begin('~/.vim/plugged')
 
 Plug 'VundleVim/Vundle.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
 " Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
@@ -264,4 +265,10 @@ set encoding=utf-8	" correct encoding
 scriptencoding utf8
 set termencoding=utf-8
 
+" set termguicolors
+
+set noshowmode
 set linespace=0
+let g:lightline = {
+      \ 'colorscheme': 'seoul256',
+      \ }
