@@ -20,6 +20,7 @@ filetype off                      " required
 call plug#begin('~/.vim/plugged')
 
 Plug 'VundleVim/Vundle.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'flazz/vim-colorschemes'
 " Plug 'godlygeek/tabular'
@@ -283,8 +284,17 @@ set encoding=utf-8	" correct encoding
 scriptencoding utf8
 set termencoding=utf-8
 
+" set termguicolors
+
+set noshowmode
 set linespace=0
+<<<<<<< HEAD
 
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " let $TERM="xterm-256color"
 " set termguicolors
+=======
+let g:lightline = {
+      \ 'colorscheme': 'seoul256',
+      \ }
+>>>>>>> 230b0b2ab2e3995931cebf5405cd00dc3c306b38
