@@ -21,6 +21,11 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'VundleVim/Vundle.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'flazz/vim-colorschemes'
+" Plug 'godlygeek/tabular'
+" Plug 'plasticboy/vim-markdown'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 " Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
 " Plug 'tpope/vim-surround'
@@ -84,7 +89,16 @@ set showmatch
 set splitbelow                              " better splits when opening new window
 set splitright
 
-set timeout timeoutlen=1000 ttimeoutlen=100 " responsive timeout
+set notimeout
+set ttimeout
+set ttimeoutlen=10
+augroup FastEscape
+	autocmd!
+	au InsertEnter * set timeoutlen=0
+	au InsertLeave * set timeoutlen=1000
+augroup END
+
+" set timeout timeoutlen=1000 ttimeoutlen=100 " responsive timeout
 
 set autoindent                              " autoindent on new lines
 set shiftwidth=4
@@ -114,6 +128,11 @@ set sessionoptions-=help
 
 " }}}
 " {{{	Plugin specific
+
+let g:vim_markdown_folding_style_pythonic = 1
+set conceallevel=2
+let g:vim_markdown_override_foldtext = 0 
+let g:vim_markdown_folding_level = 6
 
 " {{{ Plugin specific: Pandoc
 
@@ -265,3 +284,7 @@ scriptencoding utf8
 set termencoding=utf-8
 
 set linespace=0
+
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" let $TERM="xterm-256color"
+" set termguicolors
