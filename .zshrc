@@ -106,6 +106,7 @@ compinit
 
 export DROPBOX=/mnt/c/Users/Andreas/Dropbox/
 export NOTESDIR=/mnt/c/Users/Andreas/Dropbox/Notes
+export NOTESDIRS=/mnt/d/Dropbox/Notes
 
 alias vim="nvim"
 
