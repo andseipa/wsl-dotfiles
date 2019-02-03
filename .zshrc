@@ -104,9 +104,14 @@ zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
 compinit
 
+export PATH="$PATH:/home/andreas/bin"
+
 export DROPBOX=/mnt/c/Users/Andreas/Dropbox/
-export NOTESDIR=/mnt/c/Users/Andreas/Dropbox/Notes
-export NOTESDIRS=/mnt/d/Dropbox/Notes
+# export NOTESDIR=/mnt/c/Users/Andreas/Dropbox/Notes
+# export NOTESDIRS=/mnt/d/Dropbox/Notes
+
+# Temporary script for checking hostname
+exec hcheck
 
 alias vim="nvim"
 
@@ -122,3 +127,13 @@ alias tnew="tmux new -s"
 alias ta="tmux a"
 alias tat="tmux a -t"
 alias tkill="tmux kill-session -t"
+
+# hostcheck=`hostname`
+
+# h1=andreass
+# h2=andreasb
+
+# if [ "$hostcheck" = "$h1" ]
+# 	then
+# 	echo 'Yuss'
+# fi
