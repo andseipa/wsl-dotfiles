@@ -118,8 +118,9 @@ if [ "$hostcheck" = "$h1" ]
 	then
 		export NOTESDIR="/mnt/d/Dropbox/Notes/"
 	else
-		export NOTESDIR"/mnt/c/Dropbox/Notes"
+		export NOTESDIR="/mnt/c/Users/Andreas/Dropbox/Notes"
 fi
+
 
 alias vim="nvim"
 
