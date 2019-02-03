@@ -111,7 +111,15 @@ export DROPBOX=/mnt/c/Users/Andreas/Dropbox/
 # export NOTESDIRS=/mnt/d/Dropbox/Notes
 
 # Temporary script for checking hostname
-exec hcheck
+h1=andreass
+hostcheck=`hostname`
+
+if [ "$hostcheck" = "$h1" ]
+	then
+		export NOTESDIR="/mnt/d/Dropbox/Notes/"
+	else
+		export NOTESDIR"/mnt/c/Dropbox/Notes"
+fi
 
 alias vim="nvim"
 
