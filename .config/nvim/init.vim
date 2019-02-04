@@ -181,6 +181,7 @@ map <leader>r :r! date "+\%d/\%m-\%Y"<CR>
 " Easy access to notesdir, vimrc, etc
 map <leader>1 :CtrlP $NOTESDIR<CR>
 map <leader>2 :e $NOTESDIR/etc/etc.md<CR>
+map <leader>3 :e $NOTESDIR/etc/git.md<CR>
 " map <leader>2 :CtrlP $PRESENDIR<CR>
 " map <leader>3 :CtrlP $DEVDIR<CR>
 map <leader>0 :e ~/.config/nvim/init.vim<CR>
